@@ -8,6 +8,10 @@
 import Foundation
 import Api
 
+/// The `SellerRepositoryDefault` class implements the `SellerRepository` protocol
+/// and acts as a concrete repository for fetching sellers' data.
+///
+/// This repository uses a `SellerService` instance to fetch sellers' data from a remote API or data source.
 public final class SellerRepositoryDefault: SellerRepository {
 	private let service: SellerService
 
@@ -18,6 +22,8 @@ public final class SellerRepositoryDefault: SellerRepository {
 	public func getSellers() async throws -> [Seller] {
 		do {
 			let sellersData = try await service.getSellers()
+			// Map the fetched `SellerData` to an array of `Seller`
+			// entities using the `SellerMapper` extension
 			return sellersData.map { .init(data: $0) }
 		} catch {
 			throw SellerRepositoryError.cantGetSellers
