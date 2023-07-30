@@ -19,7 +19,6 @@ public final class SellerRepositoryDefault: SellerRepository {
 		do {
 			let sellersData = try await service.getSellers()
 			return sellersData.map { .init(data: $0) }
-			
 		} catch {
 			throw SellerRepositoryError.cantGetSellers
 		}

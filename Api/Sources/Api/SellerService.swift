@@ -8,7 +8,7 @@
 import Foundation
 
 public struct SellerService {
-	
+
 	public init() {}
 
 	public func getSellers() async throws -> [SellerData] {
