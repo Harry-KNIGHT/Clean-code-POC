@@ -25,7 +25,6 @@ public struct SellerData: Codable {
 	}
 }
 
-
 public struct Coordinate: Codable {
 	public let lat: String
 	public let long: String

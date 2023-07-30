@@ -9,7 +9,6 @@ import Foundation
 import CoreLocation
 import Api
 
-
 extension Seller {
 	init(data: SellerData) {
 		self.name = data.name

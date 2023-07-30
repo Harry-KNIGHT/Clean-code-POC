@@ -7,8 +7,6 @@
 
 import Foundation
 
-import Foundation
-
 public protocol SellerRepository {
 	func getSellers() async throws -> [Seller]
 }
