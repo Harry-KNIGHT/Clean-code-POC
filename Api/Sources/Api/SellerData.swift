@@ -7,6 +7,8 @@
 
 import Foundation
 
+/// The `SellerData` struct represents information about a seller from `SellerService`,
+/// including their name, description, and geographic coordinates.
 public struct SellerData: Codable {
 	public let name: String
 	public let description: String

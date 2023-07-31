@@ -7,6 +7,7 @@
 
 import Foundation
 
+/// The `SellerService` struct provides method to interact with a remote API and fetch seller data.
 public struct SellerService {
 
 	public init() {}

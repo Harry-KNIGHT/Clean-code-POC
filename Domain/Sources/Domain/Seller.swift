@@ -8,6 +8,8 @@
 import Foundation
 import CoreLocation
 
+/// The `Seller` struct represents a seller entity with essential information such
+/// as name, description, and geographic coordinates for business layer.
 public struct Seller: Identifiable {
 	public var id: String { name }
 	public let name: String
