@@ -51,4 +51,32 @@ final class ApiTests: XCTestCase {
 		XCTAssertThrowsError(try await repository.getSellers())
 	}
 	 */
+
+	func test_given_jsonOfSeller_when_decoding_then_receiveSwiftObject() async {
+		// GIVEN
+		let data = Data("[{\"name\": \"La Maison du Bissap\", \"description\": \"Seller Description\", \"location\": {\"latitude\": \"12.3456\", \"longitude\": \"-78.9012\"}}]".utf8)
+
+		do {
+			// WHEN
+			let container = try JSONDecoder().decode([SellerData].self, from: data)
+
+			// THEN
+			XCTAssertEqual(container[0].name, "La Maison du Bissap")
+			XCTAssertEqual(container.count, 1)
+			XCTAssertFalse(container.isEmpty)
+			XCTAssertEqual(
+				container[0],
+				SellerData(
+					name: "La Maison du Bissap",
+					description: "Seller Description",
+					coordinate: Coordinate(
+						lat: "12.3456",
+						long: "-78.9012"
+					)
+				)
+			)
+		} catch {
+			fatalError("Can't decode type")
+		}
+	}
 }
