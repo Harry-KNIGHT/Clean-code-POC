@@ -36,21 +36,6 @@ final class ApiTests: XCTestCase {
 		XCTAssertTrue(mockService.shouldThrowError)
 		XCTAssertEqual(mockService.sellersToReturn, nil)
 	}
-	
-	/*
-	Test to move into domain for use SellerRepositoryDefault
-
-	func test_given_getSellersOnService_then_failureOnRepository() async throws {
-		// GIVEN
-		let mockService = SellerServiceMock()
-		mockService.shouldThrowError = true
-
-	    let repository = SellerRepositoryDefault(service: mockService)
-
-		// THEN
-		XCTAssertThrowsError(try await repository.getSellers())
-	}
-	 */
 
 	func test_given_jsonOfSeller_when_decoding_then_receiveSwiftObject() async {
 		// GIVEN

@@ -7,15 +7,18 @@
 
 import Foundation
 import CoreLocation
+import Api
 import Domain
 
-final class SellerRepositoryDefaultMock: SellerRepository, ObservableObject {
-	@Published public var sellers: [Seller]
-	@Published public var sellerError: SellerErrorsMock?
+final class SellerRepositoryDefaultMock: SellerRepository {
+	public var sellers: [Seller]
+	public var sellerError: SellerErrorsMock?
+	private let service: SellerServiceMock
 
-	init(sellers: [Seller], sellerError: SellerErrorsMock?) {
+	init(sellers: [Seller] = [], sellerError: SellerErrorsMock? = nil, service: SellerServiceMock) {
 		self.sellers = sellers
 		self.sellerError = sellerError
+		self.service = service
 	}
 
 	public enum SellerErrorsMock: Error {
