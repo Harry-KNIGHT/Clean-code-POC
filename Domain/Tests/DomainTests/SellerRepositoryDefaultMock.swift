@@ -11,12 +11,10 @@ import Api
 import Domain
 
 final class SellerRepositoryDefaultMock: SellerRepository {
-	public var sellers: [Seller]
 	public var sellerError: SellerErrorsMock?
-	private let service: SellerServiceMock
+	private let service: SellerServiceDefaultMock
 
-	init(sellers: [Seller] = [], sellerError: SellerErrorsMock? = nil, service: SellerServiceMock) {
-		self.sellers = sellers
+	init(sellerError: SellerErrorsMock? = nil, service: SellerServiceDefaultMock) {
 		self.sellerError = sellerError
 		self.service = service
 	}
@@ -26,9 +24,12 @@ final class SellerRepositoryDefaultMock: SellerRepository {
 	}
 
 	func getSellers() async throws -> [Seller] {
-		if sellers.isEmpty {
-			self.sellerError = .noSellersFetched
+		do {
+			let sellers = try await service.getSellers()
+			let convertedSeller = sellers.map { Seller(data: $0) }
+			return convertedSeller
+		} catch {
+			throw SellerErrorsMock.noSellersFetched
 		}
-		return	sellers
 	}
 }
