@@ -11,24 +11,24 @@ import CoreLocation
 import Api
 
 final class SellerRepositoryDefaultTest: XCTestCase {
-	var sut: SellerRepositoryDefaultMock!
+	var repositorySut: SellerRepositoryDefaultMock!
 	var serviceSut: SellerServiceDefaultMock!
 
-    override func setUpWithError() throws {
-		sut = SellerRepositoryDefaultMock(service: SellerServiceDefaultMock())
+	override func setUpWithError() throws {
+		repositorySut = SellerRepositoryDefaultMock(service: SellerServiceDefaultMock())
 		serviceSut = SellerServiceDefaultMock()
 
-    }
+	}
 
-    override func tearDownWithError() throws {
-       sut = nil
+	override func tearDownWithError() throws {
+		repositorySut = nil
 		serviceSut = nil
-    }
+	}
 
 	func test_given_emptyArray_when_givingData_then_checkData() async throws {
 		do {
 			// GIVEN && WHEN
-			let sellers = try await sut.getSellers()
+			let sellers = try await repositorySut.getSellers()
 
 			// THEN
 			XCTAssertEqual(sellers[0], Seller(
@@ -42,7 +42,7 @@ final class SellerRepositoryDefaultTest: XCTestCase {
 			fatalError("Something whent wrong.")
 		}
 	}
-
+	
 	func test_given_sellerData_when_mapping_then_swiftObject() async throws {
 		do {
 			// GIVEN
