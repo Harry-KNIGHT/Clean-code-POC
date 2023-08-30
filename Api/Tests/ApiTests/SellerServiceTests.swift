@@ -19,24 +19,16 @@ final class SellerServiceTests: XCTestCase {
        sut = nil
     }
 
-	func test_getSellers() async throws {
+	func test_given_getSellers_when_receiveObjects_then_verifyData() async {
 		do {
-			let sellers = try await sut.getSellers()
-
-			XCTAssertEqual(sellers.count, 9)
-		} catch {
-			throw ServiceErrors.decoding
-		}
-	}
-	func test_given_jsonOfSeller_when_decoding_then_receiveSwiftObject() async {
-		do {
-			// WHEN
+			// GIVEN && WHEN
 			let sellers = try await sut.getSellers()
 
 			// THEN
-			XCTAssertEqual(sellers[0].name, "Vendeur 1")
-			XCTAssertEqual(sellers.count, 8)
 			XCTAssertFalse(sellers.isEmpty)
+			XCTAssertEqual(sellers[0].name, "Vendeur 1")
+			XCTAssertEqual(sellers[9].name, "Vendeur 10")
+			XCTAssertEqual(sellers.count, 10)
 			XCTAssertEqual(sellers[0], SellerData(
 				name: "Vendeur 1",
 				description: "Description du vendeur 1",
@@ -45,7 +37,7 @@ final class SellerServiceTests: XCTestCase {
 					long: "78.91011")
 			))
 		} catch {
-//			fatalError("Can't decode type")
+			fatalError("Data not found")
 		}
 	}
 }
