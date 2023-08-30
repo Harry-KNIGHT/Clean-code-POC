@@ -15,11 +15,11 @@ public final class SellerServiceDefaultMock: SellerService {
 	}
 
 	public func getSellers() async throws -> [SellerData] {
-		guard let filePath = Bundle.main.path(forResource: "Sellers", ofType: "json") else {
+		guard let fileUrl = Bundle.module.url(forResource: "Sellers", withExtension: "json") else {
 			throw ServiceErrors.wrongUrl
 		}
 
-		let fileUrl = URL(filePath: filePath)
+
 		let data = try Data(contentsOf: fileUrl)
 
 		do {
