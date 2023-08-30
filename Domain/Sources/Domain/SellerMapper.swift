@@ -10,7 +10,7 @@ import CoreLocation
 import Api
 
 extension Seller {
-	init(data: SellerData) {
+	public init(data: SellerData) {
 		self.name = data.name
 		self.description = data.description
 		self.coordinate = CLLocationCoordinate2D(
