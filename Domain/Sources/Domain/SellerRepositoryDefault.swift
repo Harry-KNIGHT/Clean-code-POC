@@ -31,6 +31,6 @@ public final class SellerRepositoryDefault: SellerRepository {
 	}
 }
 
-enum SellerRepositoryError: Error {
+public enum SellerRepositoryError: Error {
 	case cantGetSellers
 }
