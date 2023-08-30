@@ -33,7 +33,7 @@ public struct Seller: Identifiable, Equatable {
 // This extension helps for make CLLocationCoordinate2D
 // conforming to Equatable protocol for unit testing.
 extension CLLocationCoordinate2D: Equatable {
-	public static func ==(lhs: CLLocationCoordinate2D, rhs: CLLocationCoordinate2D) -> Bool {
+	public static func == (lhs: CLLocationCoordinate2D, rhs: CLLocationCoordinate2D) -> Bool {
 		return lhs.latitude == rhs.latitude && lhs.longitude == rhs.longitude
 	}
 }

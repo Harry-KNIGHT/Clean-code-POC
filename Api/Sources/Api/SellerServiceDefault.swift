@@ -1,5 +1,5 @@
 //
-//  SellerData.swift
+//  SellerServiceDefault.swift
 //
 //
 //  Created by Elliot Knight on 29/07/2023.
@@ -7,8 +7,8 @@
 
 import Foundation
 
-/// The `SellerService` struct provides method to interact with a remote API and fetch seller data.
-public struct SellerService: SellersService {
+/// The `SellerServiceDefault` struct provides method to interact with a remote API and fetch seller data.
+public struct SellerServiceDefault: SellerService {
 
 	public init() {}
 
@@ -34,6 +34,6 @@ public struct SellerService: SellersService {
 	}
 }
 
-public protocol SellersService {
+public protocol SellerService {
 	func getSellers() async throws -> [SellerData]
 }

@@ -11,7 +11,7 @@ import Domain
 
 struct SellersView: View {
 	@StateObject private var sellersVm = SellersViewModel(
-		repository: SellerRepositoryDefault(service: SellerService())
+		repository: SellerRepositoryDefault(service: SellerServiceDefault())
 	)
 
 	var body: some View {
