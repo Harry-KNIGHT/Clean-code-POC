@@ -9,6 +9,11 @@ import Foundation
 import CoreLocation
 import Api
 
+/// The `SellerRepositoryDefaultMock` class implements the `SellerRepository` protocol
+/// and serves as a mock repository for retrieving seller data.
+///
+/// This repository utilizes a `SellerServiceMock` instance to retrieve seller data
+/// from a local data source for testing and development purposes.
 public final class SellerRepositoryDefaultMock: SellerRepository {
 	private let service: SellerServiceDefaultMock
 

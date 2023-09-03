@@ -9,7 +9,10 @@ import Foundation
 import CoreLocation
 
 /// The `Seller` struct represents a seller entity with essential information such
-/// as name, description, and geographic coordinates for business layer.
+/// as name, description, and geographic coordinates for the business layer.
+///
+/// This struct conforms to the `Identifiable` and `Equatable` protocols, allowing
+/// it to be uniquely identified and compared for equality.
 public struct Seller: Identifiable, Equatable {
 	public static func == (lhs: Seller, rhs: Seller) -> Bool {
 		return lhs.name == rhs.name
@@ -30,8 +33,8 @@ public struct Seller: Identifiable, Equatable {
 	}
 }
 
-// This extension helps for make CLLocationCoordinate2D
-// conforming to Equatable protocol for unit testing.
+// This extension helps `CLLocationCoordinate2D` conform to the `Equatable` protocol,
+//  allowing it to be uniquely identified and compared for equality.
 extension CLLocationCoordinate2D: Equatable {
 	public static func == (lhs: CLLocationCoordinate2D, rhs: CLLocationCoordinate2D) -> Bool {
 		return lhs.latitude == rhs.latitude && lhs.longitude == rhs.longitude
