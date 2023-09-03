@@ -12,10 +12,10 @@ Here is the UML diagram that provides a visual representation of the project's s
 
 The following topics are planned for implementation in the near future:
 
-- ~Use SPM instead of folders for API and Domain~
-- ~Move sellers json into a remote server~
-- ~Add mocks~
-- ~Add unit tests on API and Domain~.
+- [x] Use SPM instead of folders for API and Domain
+- [x] Move sellers json into a remote server
+- [x] Add mocks
+- [x] Add unit tests on API and Domain
 
 ## Learning Sources
 
