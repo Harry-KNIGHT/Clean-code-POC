@@ -10,6 +10,10 @@ import Foundation
 public final class SellerServiceDefaultMock: SellerService {
 	var serviceMockChoosen: ServiceMocks?
 
+	public init(serviceMockChoosen: ServiceMocks? = nil) {
+		self.serviceMockChoosen = serviceMockChoosen
+	}
+	
 	public enum ServiceMocks: String {
 		case sellersMock = "Sellers"
 		case sellersBadFormatMock = "SellersBadFormatMock"

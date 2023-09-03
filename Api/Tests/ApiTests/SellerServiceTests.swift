@@ -52,12 +52,10 @@ final class SellerServiceTests: XCTestCase {
 			// WHEN
 			let sellers = try await sut.getSellers()
 
-			// THEN
-			XCTAssertTrue(sellers.isEmpty)
-			XCTAssertThrowsError(ServiceErrors.decoding)
-		} catch {
-			// It always goes there bc of 
-			XCTFail("Something went wrong, fix it")
+			// Then
+		} catch ServiceErrors.decoding {
+			XCTAssertEqual(sut.serviceMockChoosen, .sellersBadFormatMock)
+			print("Cant decode type, this is good")
 		}
 	}
 }
