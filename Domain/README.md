@@ -52,3 +52,24 @@ The `SellerRepositoryDefault` class is an implementation of the `SellerRepositor
 #### Errors
 
 - `SellerRepositoryError`: An enumeration of possible errors that can occur during the data retrieval process. It includes the `cantGetSellers` case, which indicates a failure to retrieve sellers' data.
+
+### `Seller` Extension
+
+The `Seller` extension provides an initializer that allows the creation of a new `Seller` instance using data from a `SellerData` object.
+
+#### Method
+
+##### `init(data: SellerData)`
+
+- **Description**: Initializes a new `Seller` instance using data from a `SellerData` object.
+- **Parameters**:
+  - `data: SellerData`: The `SellerData` object containing seller information.
+- **Note**: This initializer extracts relevant data fields such as `name`, `description`, and `coordinates` from the `SellerData` object to create a `Seller` instance. Additionally, it converts latitude and longitude coordinates to a `CLLocationCoordinate2D` object for geospatial information.
+
+#### Example
+
+```swift
+let sellerData = SellerData(name: "Seller X", description: "Description X", coordinate: Coordinate(lat: "37.0", long: "-122.0"))
+let seller = Seller(data: sellerData)
+```
+There is an exemple on `SellerRepositoryDefault`.
