@@ -58,4 +58,17 @@ final class SellerServiceTests: XCTestCase {
 			print("Cant decode type, this is good")
 		}
 	}
+
+	func test_given_wrongUrlMock_when_gettingSellers_then_throwError() async throws{
+		// GIVEN
+		sut.serviceMockChoosen = .wrongUrlMock
+
+		do {
+			// WHEN
+			 _ = try await sut.getSellers()
+		} catch {
+			// THEN
+			XCTAssertEqual(error as? ServiceErrors, .wrongUrl)
+		}
+	}
 }
