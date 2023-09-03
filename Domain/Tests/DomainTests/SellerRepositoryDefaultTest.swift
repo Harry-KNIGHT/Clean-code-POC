@@ -27,7 +27,7 @@ final class SellerRepositoryDefaultTest: XCTestCase {
 	func test_given_emptyArray_when_givingData_then_checkData() async throws {
 		do {
 			// GIVEN
-			serviceSut.serviceMockChoosen = .sellersMock
+			serviceSut.serviceMockChoosen = .goodFormatMock
 
 			// WHEN
 			let sellers = try await repositorySut.getSellers()
@@ -48,9 +48,10 @@ final class SellerRepositoryDefaultTest: XCTestCase {
 	func test_given_sellerData_when_mapping_then_swiftObject() async throws {
 		do {
 			// GIVEN
-			let serviceSellers = try await serviceSut.getSellers()
+			serviceSut.serviceMockChoosen = .goodFormatMock
 
 			// WHEN
+			let serviceSellers = try await serviceSut.getSellers()
 			let convertedSellers = serviceSellers.map { Seller(data: $0) }
 
 			// THEN

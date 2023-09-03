@@ -22,7 +22,7 @@ final class SellerServiceTests: XCTestCase {
 	func test_given_getSellers_when_receiveObjects_then_verifyData() async {
 		do {
 			// GIVEN
-			sut.serviceMockChoosen = .sellersMock
+			sut.serviceMockChoosen = .goodFormatMock
 
 			// WHEN
 			let sellers = try await sut.getSellers()
@@ -47,14 +47,14 @@ final class SellerServiceTests: XCTestCase {
 	func test_given_getSellers_when_receivingBadFormattedData_then_throwError() async throws {
 		do {
 			// GIVEN
-			sut.serviceMockChoosen = .sellersBadFormatMock
+			sut.serviceMockChoosen = .badFormatMock
 
 			// WHEN
 			let sellers = try await sut.getSellers()
 
 			// Then
 		} catch ServiceErrors.decoding {
-			XCTAssertEqual(sut.serviceMockChoosen, .sellersBadFormatMock)
+			XCTAssertEqual(sut.serviceMockChoosen, .badFormatMock)
 			print("Cant decode type, this is good")
 		}
 	}
