@@ -17,7 +17,6 @@ final class SellerRepositoryDefaultTest: XCTestCase {
 	override func setUpWithError() throws {
 		repositorySut = SellerRepositoryDefaultMock(service: SellerServiceDefaultMock())
 		serviceSut = SellerServiceDefaultMock()
-
 	}
 
 	override func tearDownWithError() throws {
@@ -27,7 +26,10 @@ final class SellerRepositoryDefaultTest: XCTestCase {
 
 	func test_given_emptyArray_when_givingData_then_checkData() async throws {
 		do {
-			// GIVEN && WHEN
+			// GIVEN
+			serviceSut.serviceMockChoosen = .sellersMock
+
+			// WHEN
 			let sellers = try await repositorySut.getSellers()
 
 			// THEN
@@ -46,6 +48,7 @@ final class SellerRepositoryDefaultTest: XCTestCase {
 	func test_given_sellerData_when_mapping_then_swiftObject() async throws {
 		do {
 			// GIVEN
+
 			let serviceSellers = try await serviceSut.getSellers()
 
 			// WHEN

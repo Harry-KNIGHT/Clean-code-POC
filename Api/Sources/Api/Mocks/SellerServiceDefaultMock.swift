@@ -8,14 +8,22 @@
 import Foundation
 
 public final class SellerServiceDefaultMock: SellerService {
-	public var shouldThrowError: Bool
+	public var serviceMockChoosen: ServiceMocks?
 
-	public init(shouldThrowError: Bool = false) {
-		self.shouldThrowError = shouldThrowError
+	public init(serviceMockChoosen: ServiceMocks? = .sellersMock) {
+		self.serviceMockChoosen = serviceMockChoosen
+	}
+	
+	public enum ServiceMocks: String {
+		case sellersMock = "Sellers"
+		case sellersBadFormatMock = "SellersBadFormatMock"
 	}
 
 	public func getSellers() async throws -> [SellerData] {
-		guard let fileUrl = Bundle.module.url(forResource: "Sellers", withExtension: "json") else {
+		guard let fileUrl = Bundle.module.url(
+			forResource: serviceMockChoosen?.rawValue,
+			withExtension: "json"
+		) else {
 			throw ServiceErrors.wrongUrl
 		}
 
