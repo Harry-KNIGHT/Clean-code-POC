@@ -8,9 +8,9 @@
 import Foundation
 
 public final class SellerServiceDefaultMock: SellerService {
-	var serviceMockChoosen: ServiceMocks?
+	public var serviceMockChoosen: ServiceMocks?
 
-	public init(serviceMockChoosen: ServiceMocks? = nil) {
+	public init(serviceMockChoosen: ServiceMocks? = .sellersMock) {
 		self.serviceMockChoosen = serviceMockChoosen
 	}
 	
