@@ -12,7 +12,7 @@ final class SellerServiceTests: XCTestCase {
 
 	var sut: SellerServiceDefaultMock!
     override func setUpWithError() throws {
-		sut = SellerServiceDefaultMock(serviceMockChoosen: .sellersMock)
+		sut = SellerServiceDefaultMock()
     }
 
     override func tearDownWithError() throws {
@@ -21,9 +21,11 @@ final class SellerServiceTests: XCTestCase {
 
 	func test_given_getSellers_when_receiveObjects_then_verifyData() async {
 		do {
-			// GIVEN && WHEN
-			let sellers = try await sut.getSellers()
+			// GIVEN
 			sut.serviceMockChoosen = .sellersMock
+
+			// WHEN
+			let sellers = try await sut.getSellers()
 
 			// THEN
 			XCTAssertFalse(sellers.isEmpty)
@@ -38,23 +40,24 @@ final class SellerServiceTests: XCTestCase {
 					long: "78.91011")
 			))
 		} catch {
-			fatalError("Data not found")
+			XCTFail("Something went wrong, fix it")
 		}
 	}
 
 	func test_given_getSellers_when_receivingBadFormattedData_then_throwError() async throws {
 		do {
-			// GIVEN && WHEN
-
-			let sellers = try await sut.getSellers()
+			// GIVEN
 			sut.serviceMockChoosen = .sellersBadFormatMock
 
+			// WHEN
+			let sellers = try await sut.getSellers()
+
 			// THEN
-			XCTAssertTrue(!sellers.isEmpty)
+			XCTAssertTrue(sellers.isEmpty)
 			XCTAssertThrowsError(ServiceErrors.decoding)
 		} catch {
 			// It always goes there bc of 
-			fatalError("FATAL ERROR")
+			XCTFail("Something went wrong, fix it")
 		}
 	}
 }

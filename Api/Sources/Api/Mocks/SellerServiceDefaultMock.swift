@@ -15,10 +15,6 @@ public final class SellerServiceDefaultMock: SellerService {
 		case sellersBadFormatMock = "SellersBadFormatMock"
 	}
 
-	public init(serviceMockChoosen: ServiceMocks?) {
-		self.serviceMockChoosen = serviceMockChoosen
-	}
-
 	public func getSellers() async throws -> [SellerData] {
 		guard let fileUrl = Bundle.module.url(
 			forResource: serviceMockChoosen?.rawValue,
