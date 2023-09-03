@@ -16,13 +16,14 @@ import Foundation
 public final class SellerServiceDefaultMock: SellerService {
 	public var serviceMockChoosen: ServiceMocks?
 
-	public init(serviceMockChoosen: ServiceMocks? = .sellersMock) {
+	public init(serviceMockChoosen: ServiceMocks? = .goodFormatMock) {
 		self.serviceMockChoosen = serviceMockChoosen
 	}
 
 	public enum ServiceMocks: String {
-		case sellersMock = "Sellers"
-		case sellersBadFormatMock = "SellersBadFormatMock"
+		case goodFormatMock = "Sellers"
+		case badFormatMock = "SellersBadFormatMock"
+		case emptyUrl = ""
 	}
 
 	/// Retrieves seller data based on the selected mock scenario asynchronously.
