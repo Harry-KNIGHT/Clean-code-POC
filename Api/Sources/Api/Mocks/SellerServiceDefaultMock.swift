@@ -19,7 +19,7 @@ public final class SellerServiceDefaultMock: SellerService {
 	public init(serviceMockChoosen: ServiceMocks? = .sellersMock) {
 		self.serviceMockChoosen = serviceMockChoosen
 	}
-	
+
 	public enum ServiceMocks: String {
 		case sellersMock = "Sellers"
 		case sellersBadFormatMock = "SellersBadFormatMock"
@@ -40,7 +40,6 @@ public final class SellerServiceDefaultMock: SellerService {
 		) else {
 			throw ServiceErrors.wrongUrl
 		}
-
 
 		let data = try Data(contentsOf: fileUrl)
 
