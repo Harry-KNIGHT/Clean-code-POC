@@ -40,22 +40,21 @@ final class SellerServiceTests: XCTestCase {
 					long: "78.91011")
 			))
 		} catch {
-			XCTFail("Something went wrong, fix it")
+			fatalError("It would never catch there")
 		}
 	}
 
 	func test_given_getSellers_when_receivingBadFormattedData_then_throwError() async throws {
+		// GIVEN
+		sut.serviceMockChoosen = .badFormatMock
+
 		do {
-			// GIVEN
-			sut.serviceMockChoosen = .badFormatMock
-
 			// WHEN
-			let sellers = try await sut.getSellers()
-
-			// Then
-		} catch ServiceErrors.decoding {
+			_ = try await sut.getSellers()
+		} catch {
+			// THEN
+			XCTAssertEqual(error as? ServiceErrors, .decoding)
 			XCTAssertEqual(sut.serviceMockChoosen, .badFormatMock)
-			print("Cant decode type, this is good")
 		}
 	}
 
@@ -69,6 +68,7 @@ final class SellerServiceTests: XCTestCase {
 		} catch {
 			// THEN
 			XCTAssertEqual(error as? ServiceErrors, .wrongUrl)
+			XCTAssertEqual(sut.serviceMockChoosen, .wrongUrlMock)
 		}
 	}
 }
