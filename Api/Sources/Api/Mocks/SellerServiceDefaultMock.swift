@@ -23,7 +23,6 @@ public final class SellerServiceDefaultMock: SellerService {
 	public enum ServiceMocks: String {
 		case goodFormatMock = "Sellers"
 		case badFormatMock = "SellersBadFormatMock"
-		case emptyUrl = ""
 	}
 
 	/// Retrieves seller data based on the selected mock scenario asynchronously.
