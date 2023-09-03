@@ -14,8 +14,8 @@ The following topics are planned for implementation in the near future:
 
 - ~Use SPM instead of folders for API and Domain~
 - ~Move sellers json into a remote server~
-- Add mocks
-- Add unit tests.
+- ~Add mocks~
+- ~Add unit tests on API and Domain~.
 
 ## Learning Sources
 
@@ -28,4 +28,4 @@ Throughout my iOS project architecture learning journey, I've consulted various 
 
 ### Acknowledgments
 
-I extend my gratitude to Lionel, Mickaël, Ronaël, and others who have generously contributed to improving my visualization and coding skills. Your support is greatly appreciated.
+I extend my gratitude to Lionel, Mickaël, Ronaël, Paul, and others who have generously contributed to improving my visualization and coding skills. Your support is greatly appreciated.
