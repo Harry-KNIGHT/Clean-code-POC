@@ -36,7 +36,7 @@ final class SellerRepositoryDefaultTest: XCTestCase {
 			XCTAssertEqual(sellers[0], Seller(
 				name: "Vendeur 1",
 				description: "Description du vendeur 1",
-				coordinate: CLLocationCoordinate2D(latitude: 12.3456, longitude:  78.91011)
+				coordinate: CLLocationCoordinate2D(latitude: 12.3456, longitude: 78.91011)
 			))
 			XCTAssertEqual(sellers.count, 10)
 			XCTAssertFalse(sellers.isEmpty)
@@ -44,11 +44,10 @@ final class SellerRepositoryDefaultTest: XCTestCase {
 			fatalError("Something whent wrong.")
 		}
 	}
-	
+
 	func test_given_sellerData_when_mapping_then_swiftObject() async throws {
 		do {
 			// GIVEN
-
 			let serviceSellers = try await serviceSut.getSellers()
 
 			// WHEN
