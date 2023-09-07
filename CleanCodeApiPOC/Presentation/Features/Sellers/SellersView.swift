@@ -15,11 +15,21 @@ struct SellersView: View {
 		repository: SellerRepositoryDefault(service: SellerServiceDefault())
 	)
 
+	@StateObject var locationManager = LocationManager()
+
 	var body: some View {
 		Map {
 			ForEach(sellersVm.sellers) { seller in
 				Marker(seller.name, coordinate: seller.coordinate)
 			}
+		}
+		.mapControls {
+			MapUserLocationButton()
+			MapCompass()
+			MapScaleView()
+		}
+		.onAppear {
+			locationManager.requestLocation()
 		}
 	}
 }
