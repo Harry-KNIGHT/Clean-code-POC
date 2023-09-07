@@ -39,7 +39,7 @@ public final class SellerServiceDefaultMock: SellerService {
 			forResource: serviceMockChoosen?.rawValue,
 			withExtension: "json"
 		) else {
-			throw ServiceErrors.wrongUrl
+			throw ServiceError.invalidUrl
 		}
 
 		let data = try Data(contentsOf: fileUrl)
@@ -48,7 +48,7 @@ public final class SellerServiceDefaultMock: SellerService {
 			let sellers = try JSONDecoder().decode([SellerData].self, from: data)
 			return sellers
 		} catch {
-			throw ServiceErrors.decoding
+			throw ServiceError.invalidDecoding
 		}
 	}
 }
