@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import MapKit
 import Api
 import Domain
 
@@ -14,18 +15,21 @@ struct SellersView: View {
 		repository: SellerRepositoryDefault(service: SellerServiceDefault())
 	)
 
+	@StateObject var locationManager = LocationManager()
+
 	var body: some View {
-		if sellersVm.sellers.isEmpty {
-			Text("Empty list")
-		} else {
-			List(sellersVm.sellers) {  seller in
-				VStack(alignment: .leading, spacing: 5) {
-					Text(seller.name)
-					Text(seller.description)
-					Text(String(seller.coordinate.latitude))
-					Text(String(seller.coordinate.longitude))
-				}
+		Map {
+			ForEach(sellersVm.sellers) { seller in
+				Marker(seller.name, coordinate: seller.coordinate)
 			}
+		}
+		.mapControls {
+			MapUserLocationButton()
+			MapCompass()
+			MapScaleView()
+		}
+		.onAppear {
+			locationManager.requestLocation()
 		}
 	}
 }

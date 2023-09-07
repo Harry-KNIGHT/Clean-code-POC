@@ -13,7 +13,7 @@ public struct SellerServiceDefault: SellerService {
 	public init() {}
 
 	public func getSellers() async throws -> [SellerData] {
-		let url = URL(string: "https://api.jsonserve.com/1lF0TA")
+		let url = URL(string: "https://api.jsonserve.com/rLJWz-")
 
 		guard let url else {
 			throw ServiceErrors.wrongUrl
