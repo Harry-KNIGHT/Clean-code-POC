@@ -22,6 +22,7 @@ struct SellersView: View {
 			ForEach(sellersVm.sellers) { seller in
 				Marker(seller.name, coordinate: seller.coordinate)
 			}
+			UserAnnotation()
 		}
 		.mapControls {
 			MapUserLocationButton()
