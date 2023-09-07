@@ -15,9 +15,9 @@ import Api
 /// This repository utilizes a `SellerServiceMock` instance to retrieve seller data
 /// from a local data source for testing and development purposes.
 public final class SellerRepositoryDefaultMock: SellerRepository {
-	private let service: SellerServiceDefaultMock
+	private let service: SellerService
 
-	public init(service: SellerServiceDefaultMock) {
+	public init(service: SellerService) {
 		self.service = service
 	}
 
