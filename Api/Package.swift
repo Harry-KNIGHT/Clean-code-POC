@@ -17,13 +17,14 @@ let package = Package(
 	targets: [
 		.target(
 			name: "Api",
-			dependencies: [],
-			resources: [
-				.process("Resources")
-			]
+			dependencies: []
 		),
 		.testTarget(
 			name: "ApiTests",
-			dependencies: ["Api"])
+			dependencies: ["Api"],
+			resources: [
+				.process("Resources")
+			]
+		)
 	]
 )

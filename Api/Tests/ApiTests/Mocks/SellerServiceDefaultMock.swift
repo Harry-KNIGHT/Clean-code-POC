@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import Api
 
 /// The `SellerServiceDefaultMock` class implements the `SellerService` protocol and
 /// serves as a mock service for fetching seller data based on selected mock scenarios.
