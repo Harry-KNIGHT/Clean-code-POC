@@ -22,8 +22,8 @@ public final class SellerServiceDefaultMock: SellerService {
 	}
 
 	public enum ServiceMocks: String {
-		case goodFormatMock = "Sellers"
-		case badFormatMock = "SellersBadFormatMock"
+		case goodFormatMock = "SellersMock"
+		case badFormatMock = "SellersInvalidFormatMock"
 		case wrongUrlMock = "WrongUrlMock"
 	}
 
