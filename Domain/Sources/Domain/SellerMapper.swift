@@ -20,8 +20,8 @@ extension Seller {
 		self.name = data.name
 		self.description = data.description
 		self.coordinate = Coordinate(
-			latitude: Double(data.coordinate.lat) ?? 0,
-			longitude: Double(data.coordinate.long) ?? 0
+			latitude: Double(data.coordinate.latitude) ?? 0,
+			longitude: Double(data.coordinate.longitude) ?? 0
 		)
 	}
 }

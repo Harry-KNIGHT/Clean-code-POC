@@ -28,11 +28,6 @@ public struct SellerData: Codable, Equatable {
 }
 
 public struct Coordinate: Codable, Equatable {
-	public let lat: String
-	public let long: String
-
-	public enum CodingKeys: String, CodingKey {
-		case lat = "latitude"
-		case long = "longitude"
-	}
+	public let latitude: String
+	public let longitude: String
 }

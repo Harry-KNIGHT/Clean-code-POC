@@ -36,8 +36,8 @@ final class SellerServiceTests: XCTestCase {
 				name: "Vendeur 1",
 				description: "Description du vendeur 1",
 				coordinate: Coordinate(
-					lat: "12.3456",
-					long: "78.91011")
+					latitude: "12.3456",
+					longitude: "78.91011")
 			))
 		} catch {
 			fatalError("It would never catch there")
