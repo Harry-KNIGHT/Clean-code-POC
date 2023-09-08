@@ -8,7 +8,6 @@
 import XCTest
 import Domain
 import CoreLocation
-import Api
 
 final class SellerRepositoryDefaultTest: XCTestCase {
 	var repositorySut: SellerRepositoryDefaultMock!

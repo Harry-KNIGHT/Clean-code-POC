@@ -58,7 +58,7 @@ final class SellerServiceTests: XCTestCase {
 		}
 	}
 
-	func test_given_wrongUrlMock_when_gettingSellers_then_throwError() async throws{
+	func test_given_wrongUrlMock_when_gettingSellers_then_throwError() async throws {
 		// GIVEN
 		sut.serviceMockChoosen = .wrongUrlMock
 
