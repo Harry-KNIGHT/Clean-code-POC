@@ -7,8 +7,8 @@
 
 import Foundation
 
-enum ServiceErrors: Error {
-	case wrongUrl
-	case httpResponse
-	case decoding
+public enum ServiceError: Error {
+	case invalidUrl
+	case invalidHttpResponse
+	case invalidDecoding
 }

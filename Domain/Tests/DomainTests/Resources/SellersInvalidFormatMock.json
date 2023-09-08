@@ -1,0 +1,88 @@
+[
+ {
+ "description": 12345,
+ "location": "Location du vendeur 1",
+ "name": {
+ "latitude": "12.3456",
+ "longitude": 78.91011
+ }
+ },
+ {
+ "name": ["Vendeur 2"],
+ "location": {
+ "latitude": true,
+ "longitude": "89.10112"
+ },
+ "description": {
+ "desc": "Description du vendeur 2"
+ }
+ },
+ {
+ "location": "Location du vendeur 3",
+ "description": {
+ "latitude": "34.5678",
+ "longitude": [90.11123]
+ },
+ "name": "Vendeur 3"
+ },
+ {
+ "name": 12345,
+ "location": "Location du vendeur 4",
+ "description": {
+ "latitude": "45.6789",
+ "longitude": "101.11234"
+ }
+ },
+ {
+ "description": {
+ "latitude": "56.7890"
+ },
+ "location": {
+ "longitude": null,
+ "latitude": "112.12345"
+ },
+ "name": "Vendeur 5"
+ },
+ {
+ "name": "Vendeur 6",
+ "location": {
+ "latitude": "67.8901",
+ "longitude": {
+ "long": "123.23456"
+ }
+ },
+ "description": ["Description du vendeur 6"]
+ },
+ {
+ "description": "Description du vendeur 7",
+ "name": {
+ "latitude": "78.9012"
+ },
+ "location": "Location du vendeur 7"
+ },
+ {
+ "description": {
+ "latitude": false,
+ "longitude": "145.45678"
+ },
+ "location": "Location du vendeur 8",
+ "name": "Vendeur 8"
+ },
+ {
+ "name": {
+ "latitude": "90.1234",
+ "longitude": "156.56789"
+ },
+ "description": "Description du vendeur 9",
+ "location": "Location du vendeur 9"
+ },
+ {
+ "location": {
+ "latitude": "101.2345"
+ },
+ "description": "Description du vendeur 10",
+ "name": "Vendeur 10"
+ }
+ ]
+ 
+ 

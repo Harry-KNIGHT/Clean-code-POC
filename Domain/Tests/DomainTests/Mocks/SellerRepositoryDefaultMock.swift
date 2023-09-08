@@ -6,8 +6,8 @@
 //
 
 import Foundation
-import CoreLocation
 import Api
+import Domain
 
 /// The `SellerRepositoryDefaultMock` class implements the `SellerRepository` protocol
 /// and serves as a mock repository for retrieving seller data.

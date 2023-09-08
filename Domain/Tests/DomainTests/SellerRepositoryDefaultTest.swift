@@ -36,7 +36,7 @@ final class SellerRepositoryDefaultTest: XCTestCase {
 			XCTAssertEqual(sellers[0], Seller(
 				name: "Vendeur 1",
 				description: "Description du vendeur 1",
-				coordinate: CLLocationCoordinate2D(latitude: 12.3456, longitude: 78.91011)
+				coordinate: Coordinate(latitude: 12.3456, longitude: 78.91011)
 			))
 			XCTAssertEqual(sellers.count, 10)
 			XCTAssertFalse(sellers.isEmpty)
@@ -58,7 +58,7 @@ final class SellerRepositoryDefaultTest: XCTestCase {
 			XCTAssertEqual(convertedSellers[1], Seller(
 				name: "Vendeur 2",
 				description: "Description du vendeur 2",
-				coordinate: CLLocationCoordinate2D(
+				coordinate: Coordinate(
 					latitude: 23.4567,
 					longitude: 89.10112)
 			))
