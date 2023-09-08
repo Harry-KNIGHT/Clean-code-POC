@@ -20,7 +20,12 @@ struct SellersView: View {
 	var body: some View {
 		Map {
 			ForEach(sellersVm.sellers) { seller in
-				Marker(seller.name, coordinate: seller.coordinate)
+				Marker(
+					seller.name,
+					coordinate: CLLocationCoordinate2D(
+						latitude: seller.coordinate.latitude,
+						longitude: seller.coordinate.longitude)
+				)
 			}
 		}
 		.mapControls {

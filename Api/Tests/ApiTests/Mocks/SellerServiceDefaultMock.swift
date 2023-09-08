@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import Api
 
 /// The `SellerServiceDefaultMock` class implements the `SellerService` protocol and
 /// serves as a mock service for fetching seller data based on selected mock scenarios.
@@ -13,16 +14,16 @@ import Foundation
 /// This service allows you to choose between different mock scenarios by specifying
 /// a `ServiceMocks` enum case when initializing the instance. It reads data from JSON
 /// files associated with the chosen mock scenario for testing and development purposes.
-public final class SellerServiceDefaultMock: SellerService {
-	public var serviceMockChoosen: ServiceMocks?
+final class SellerServiceDefaultMock: SellerService {
+	var serviceMockChoosen: ServiceMocks?
 
-	public init(serviceMockChoosen: ServiceMocks? = .goodFormatMock) {
+	init(serviceMockChoosen: ServiceMocks? = .goodFormatMock) {
 		self.serviceMockChoosen = serviceMockChoosen
 	}
 
-	public enum ServiceMocks: String {
-		case goodFormatMock = "Sellers"
-		case badFormatMock = "SellersBadFormatMock"
+	enum ServiceMocks: String {
+		case goodFormatMock = "SellersMock"
+		case badFormatMock = "SellersInvalidFormatMock"
 		case wrongUrlMock = "WrongUrlMock"
 	}
 
@@ -34,12 +35,12 @@ public final class SellerServiceDefaultMock: SellerService {
 	/// - Note: This method reads seller data from a JSON file associated with the
 	///   chosen mock scenario. It can simulate errors if the JSON file format is
 	///   incorrect or if the file is missing.
-	public func getSellers() async throws -> [SellerData] {
+	func getSellers() async throws -> [SellerData] {
 		guard let fileUrl = Bundle.module.url(
 			forResource: serviceMockChoosen?.rawValue,
 			withExtension: "json"
 		) else {
-			throw ServiceErrors.wrongUrl
+			throw ServiceError.invalidUrl
 		}
 
 		let data = try Data(contentsOf: fileUrl)
@@ -48,7 +49,7 @@ public final class SellerServiceDefaultMock: SellerService {
 			let sellers = try JSONDecoder().decode([SellerData].self, from: data)
 			return sellers
 		} catch {
-			throw ServiceErrors.decoding
+			throw ServiceError.invalidDecoding
 		}
 	}
 }

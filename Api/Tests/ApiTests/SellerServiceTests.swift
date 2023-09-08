@@ -36,8 +36,8 @@ final class SellerServiceTests: XCTestCase {
 				name: "Vendeur 1",
 				description: "Description du vendeur 1",
 				coordinate: Coordinate(
-					lat: "12.3456",
-					long: "78.91011")
+					latitude: "12.3456",
+					longitude: "78.91011")
 			))
 		} catch {
 			fatalError("It would never catch there")
@@ -53,12 +53,12 @@ final class SellerServiceTests: XCTestCase {
 			_ = try await sut.getSellers()
 		} catch {
 			// THEN
-			XCTAssertEqual(error as? ServiceErrors, .decoding)
+			XCTAssertEqual(error as? ServiceError, .invalidDecoding)
 			XCTAssertEqual(sut.serviceMockChoosen, .badFormatMock)
 		}
 	}
 
-	func test_given_wrongUrlMock_when_gettingSellers_then_throwError() async throws{
+	func test_given_wrongUrlMock_when_gettingSellers_then_throwError() async throws {
 		// GIVEN
 		sut.serviceMockChoosen = .wrongUrlMock
 
@@ -67,7 +67,7 @@ final class SellerServiceTests: XCTestCase {
 			 _ = try await sut.getSellers()
 		} catch {
 			// THEN
-			XCTAssertEqual(error as? ServiceErrors, .wrongUrl)
+			XCTAssertEqual(error as? ServiceError, .invalidUrl)
 			XCTAssertEqual(sut.serviceMockChoosen, .wrongUrlMock)
 		}
 	}

@@ -16,20 +16,20 @@ public struct SellerServiceDefault: SellerService {
 		let url = URL(string: "https://api.jsonserve.com/rLJWz-")
 
 		guard let url else {
-			throw ServiceErrors.wrongUrl
+			throw ServiceError.invalidUrl
 
 		}
 
 		let (data, response) = try await URLSession.shared.data(from: url)
 
 		guard let response = response as? HTTPURLResponse, (200...299).contains(response.statusCode) else {
-			throw ServiceErrors.httpResponse
+			throw ServiceError.invalidHttpResponse
 		}
 
 		do {
 			return try JSONDecoder().decode([SellerData].self, from: data)
 		} catch {
-			throw ServiceErrors.decoding
+			throw ServiceError.invalidDecoding
 		}
 	}
 }
