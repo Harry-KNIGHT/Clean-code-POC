@@ -22,9 +22,14 @@ let package = Package(
         // Targets can depend on other targets in this package, and on products in packages this package depends on.
         .target(
             name: "Domain",
-            dependencies: ["Api"]),
+            dependencies: ["Api"]
+		),
         .testTarget(
             name: "DomainTests",
-            dependencies: ["Domain"])
+            dependencies: ["Domain"],
+			resources: [
+				.process("Resources")
+			]
+		)
     ]
 )
