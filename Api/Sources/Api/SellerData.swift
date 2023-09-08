@@ -10,12 +10,6 @@ import Foundation
 /// The `SellerData` struct represents information about a seller from `SellerService`,
 /// including their name, description, and geographic coordinates.
 public struct SellerData: Codable, Equatable {
-	public static func == (lhs: SellerData, rhs: SellerData) -> Bool {
-		return lhs.name == rhs.name &&
-		lhs.description == rhs.description &&
-		lhs.coordinate == rhs.coordinate
-	}
-
 	public let name: String
 	public let description: String
 	public let coordinate: Coordinate

@@ -14,14 +14,14 @@ import Domain
 ///
 /// This repository utilizes a `SellerServiceMock` instance to retrieve seller data
 /// from a local data source for testing and development purposes.
-public final class SellerRepositoryDefaultMock: SellerRepository {
+final class SellerRepositoryDefaultMock: SellerRepository {
 	private let service: SellerService
 
 	public init(service: SellerService) {
 		self.service = service
 	}
 
-	public func getSellers() async throws -> [Seller] {
+	func getSellers() async throws -> [Seller] {
 		do {
 			let sellers = try await service.getSellers()
 			let convertedSeller = sellers.map { Seller(data: $0) }

@@ -14,7 +14,7 @@ import Api
 /// This service allows you to choose between different mock scenarios by specifying
 /// a `ServiceMocks` enum case when initializing the instance. It reads data from JSON
 /// files associated with the chosen mock scenario for testing and development purposes.
-public final class SellerServiceDefaultMock: SellerService {
+final class SellerServiceDefaultMock: SellerService {
 	public var serviceMockChoosen: ServiceMocks?
 
 	public init(serviceMockChoosen: ServiceMocks? = .goodFormatMock) {
@@ -35,7 +35,7 @@ public final class SellerServiceDefaultMock: SellerService {
 	/// - Note: This method reads seller data from a JSON file associated with the
 	///   chosen mock scenario. It can simulate errors if the JSON file format is
 	///   incorrect or if the file is missing.
-	public func getSellers() async throws -> [SellerData] {
+	func getSellers() async throws -> [SellerData] {
 		guard let fileUrl = Bundle.module.url(
 			forResource: serviceMockChoosen?.rawValue,
 			withExtension: "json"
