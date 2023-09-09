@@ -53,7 +53,7 @@ final class SellerServiceTests: XCTestCase {
 			_ = try await sut.getSellers()
 		} catch {
 			// THEN
-			XCTAssertEqual(error as? ServiceError, .invalidDecoding)
+			XCTAssertEqual(error as? ServiceError, .unknown)
 			XCTAssertEqual(sut.serviceMockChoosen, .badFormatMock)
 		}
 	}

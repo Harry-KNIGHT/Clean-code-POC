@@ -27,8 +27,10 @@ import Foundation
 	 // Handle any errors that may occur during the request
  }
 **/
-public class BaseApi {
-	func sendRequest<T: Decodable>(url: URL?, responseModel: T.Type) async throws -> T {
+public class BaseApi: GenericApiRequest {
+	public init() {}
+
+	public func sendRequest<T: Decodable>(url: URL?, responseModel: T.Type) async throws -> T {
 		guard let url else {
 			throw ServiceError.invalidUrl
 		}
@@ -55,4 +57,8 @@ public class BaseApi {
 			throw ServiceError.unknown
 		}
 	}
+}
+
+public protocol GenericApiRequest {
+	func sendRequest<T: Decodable>(url: URL?, responseModel: T.Type) async throws -> T
 }

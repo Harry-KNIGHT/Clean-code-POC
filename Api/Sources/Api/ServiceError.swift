@@ -7,7 +7,7 @@
 
 import Foundation
 
-public enum ServiceError: Error {
+public enum ServiceError: Error, Equatable {
 	case invalidUrl
 	case invalidHttpResponse
 	case invalidDecoding
