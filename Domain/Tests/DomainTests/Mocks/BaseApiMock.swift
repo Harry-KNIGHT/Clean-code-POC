@@ -17,8 +17,8 @@ final class BaseApiMock: BaseApi {
 		let data = try Data(contentsOf: url)
 
 		do {
-			let sellers = try JSONDecoder().decode([SellerData].self, from: data)
-			return sellers as! T
+			let sellers = try JSONDecoder().decode(responseModel, from: data)
+			return sellers
 		} catch {
 			throw ServiceError.unknown
 		}
