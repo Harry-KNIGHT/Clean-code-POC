@@ -7,6 +7,26 @@
 
 import Foundation
 
+/**
+ `BaseApi` is a Swift class for making asynchronous network requests using the `async/await` concurrency model.
+
+ It provides a generic method `sendRequest` to send HTTP requests and  decode the response
+ into a specified model conforming to `Decodable`.
+
+ - Note: Ensure that your `responseModel` conforms to the `Decodable` protocol to allow for successful JSON decoding.
+
+ ### Usage Example
+
+ ```swift
+ let api = BaseApi()
+ let url = URL(string: "https://example.com/api/data")
+ do {
+	 let responseModel = try await api.sendRequest(url: url, responseModel: YourDecodableModel.self)
+	 // Handle the responseModel
+ } catch {
+	 // Handle any errors that may occur during the request
+ }
+**/
 public class BaseApi {
 	func sendRequest<T: Decodable>(url: URL?, responseModel: T.Type) async throws -> T {
 		guard let url else {
