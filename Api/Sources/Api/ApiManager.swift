@@ -1,5 +1,5 @@
 //
-//  BaseApi.swift
+//  ApiManager.swift
 //
 //
 //  Created by Elliot Knight on 09/09/2023.
@@ -27,7 +27,7 @@ import Foundation
 	 // Handle any errors that may occur during the request
  }
 **/
-public class BaseApi: GenericApiRequest {
+public class BaseApiDefault: BaseApi {
 	public init() {}
 
 	public func sendRequest<T: Decodable>(url: URL?, responseModel: T.Type) async throws -> T {
@@ -59,6 +59,6 @@ public class BaseApi: GenericApiRequest {
 	}
 }
 
-public protocol GenericApiRequest {
+public protocol BaseApi {
 	func sendRequest<T: Decodable>(url: URL?, responseModel: T.Type) async throws -> T
 }

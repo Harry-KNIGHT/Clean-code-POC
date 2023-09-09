@@ -10,7 +10,7 @@ import Foundation
 /// The `SellerServiceDefault` struct provides method to interact with a remote API and fetch seller data.
 public struct SellerServiceDefault: SellerService {
 
-	private let baseApi = BaseApi()
+	private let baseApi = BaseApiDefault()
 
 	public init() {}
 

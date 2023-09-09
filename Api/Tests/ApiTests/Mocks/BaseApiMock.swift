@@ -8,7 +8,7 @@
 import Foundation
 import Api
 
-final class BaseApiMock: GenericApiRequest {
+final class BaseApiMock: BaseApi {
 	func sendRequest<T>(url: URL?, responseModel: T.Type) async throws -> T where T : Decodable {
 		guard let url else {
 			throw ServiceError.invalidUrl
