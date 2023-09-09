@@ -11,4 +11,7 @@ public enum ServiceError: Error {
 	case invalidUrl
 	case invalidHttpResponse
 	case invalidDecoding
+	case unautorized
+	case serverError(code: Int)
+	case unknown
 }
