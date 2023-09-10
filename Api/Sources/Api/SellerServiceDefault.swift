@@ -10,13 +10,13 @@ import Foundation
 /// The `SellerServiceDefault` struct provides method to interact with a remote API and fetch seller data.
 public struct SellerServiceDefault: SellerService {
 
-	private let baseApi = BaseApiDefault()
+	private let api = ApiManagerDefault()
 
 	public init() {}
 
 	public func getSellers() async throws -> [SellerData] {
 		do {
-			let sellersData = try await baseApi.sendRequest(
+			let sellersData = try await api.sendRequest(
 				url: URL(string: "https://api.jsonserve.com/rLJWz-"),
 				responseModel: [SellerData].self)
 			return sellersData

@@ -1,5 +1,5 @@
 //
-//  BaseApiMock.swift
+//  ApiManagerDefaultMock.swift
 //  
 //
 //  Created by Elliot Knight on 09/09/2023.
@@ -8,8 +8,8 @@
 import Foundation
 import Api
 
-final class BaseApiMock: BaseApi {
-	func sendRequest<T>(url: URL?, responseModel: T.Type) async throws -> T where T : Decodable {
+final class ApiManagerDefaultMock: ApiManager {
+	func sendRequest<T>(url: URL?, responseModel: T.Type) async throws -> T where T: Decodable {
 		guard let url else {
 			throw ServiceError.invalidUrl
 		}

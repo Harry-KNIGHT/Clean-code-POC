@@ -8,7 +8,7 @@
 import Foundation
 
 /**
- `BaseApi` is a Swift class for making asynchronous network requests using the `async/await` concurrency model.
+ `ApiManagerDefault` is a Swift class for making asynchronous network requests using the `async/await` concurrency model.
 
  It provides a generic method `sendRequest` to send HTTP requests and  decode the response
  into a specified model conforming to `Decodable`.
@@ -18,7 +18,7 @@ import Foundation
  ### Usage Example
 
  ```swift
- let api = BaseApi()
+ let api = ApiManagerDefault()
  let url = URL(string: "https://example.com/api/data")
  do {
 	 let responseModel = try await api.sendRequest(url: url, responseModel: YourDecodableModel.self)
@@ -27,7 +27,7 @@ import Foundation
 	 // Handle any errors that may occur during the request
  }
 **/
-public class BaseApiDefault: BaseApi {
+public class ApiManagerDefault: ApiManager {
 	public init() {}
 
 	public func sendRequest<T: Decodable>(url: URL?, responseModel: T.Type) async throws -> T {
@@ -59,6 +59,6 @@ public class BaseApiDefault: BaseApi {
 	}
 }
 
-public protocol BaseApi {
+public protocol ApiManager {
 	func sendRequest<T: Decodable>(url: URL?, responseModel: T.Type) async throws -> T
 }
