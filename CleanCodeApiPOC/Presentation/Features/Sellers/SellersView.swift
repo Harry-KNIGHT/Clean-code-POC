@@ -16,9 +16,11 @@ struct SellersView: View {
 	)
 
 	@StateObject var locationManager = LocationManager()
+	@State private var selectedIem: PresentationSeller?
+	@State private var showSheet = false
 
 	var body: some View {
-		Map {
+		Map(selection: $selectedIem) {
 			ForEach(sellersVm.sellers) { seller in
 				Marker(
 					seller.name,
@@ -26,12 +28,19 @@ struct SellersView: View {
 						latitude: seller.coordinate.latitude,
 						longitude: seller.coordinate.longitude)
 				)
+				.tag(seller)
 			}
 		}
+		.sheet(isPresented: $showSheet, content: {
+			SellerDetailView(seller: selectedIem!)
+		})
 		.mapControls {
 			MapUserLocationButton()
 			MapCompass()
 			MapScaleView()
+		}
+		.onChange(of: selectedIem) {
+			showSheet.toggle()
 		}
 		.onAppear {
 			locationManager.requestLocation()
