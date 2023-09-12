@@ -45,7 +45,9 @@ struct SellersView: View {
 			MapScaleView()
 		}
 		.onChange(of: selectedIem) {
-			showSheet.toggle()
+			if selectedIem != nil {
+				showSheet.toggle()
+			}
 		}
 		.onAppear {
 			locationManager.requestLocation()
