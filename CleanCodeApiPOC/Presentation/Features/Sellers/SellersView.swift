@@ -26,13 +26,18 @@ struct SellersView: View {
 					seller.name,
 					coordinate: CLLocationCoordinate2D(
 						latitude: seller.coordinate.latitude,
-						longitude: seller.coordinate.longitude)
+						longitude: seller.coordinate.longitude
+					)
 				)
 				.tag(seller)
 			}
 		}
 		.sheet(isPresented: $showSheet, content: {
-			SellerDetailView(seller: selectedIem!)
+			if let selectedIem {
+				SellerDetailView(
+					seller: selectedIem)
+				.presentationDetents([.fraction(0.25), .large])
+			}
 		})
 		.mapControls {
 			MapUserLocationButton()
