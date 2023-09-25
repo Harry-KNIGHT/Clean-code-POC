@@ -16,22 +16,38 @@ struct SellersView: View {
 	)
 
 	@StateObject var locationManager = LocationManager()
+	@State private var selectedIem: PresentationSeller?
+	@State private var showSheet = false
 
 	var body: some View {
-		Map {
+		Map(selection: $selectedIem) {
 			ForEach(sellersVm.sellers) { seller in
 				Marker(
 					seller.name,
 					coordinate: CLLocationCoordinate2D(
 						latitude: seller.coordinate.latitude,
-						longitude: seller.coordinate.longitude)
+						longitude: seller.coordinate.longitude
+					)
 				)
+				.tag(seller)
 			}
 		}
+		.sheet(isPresented: $showSheet, content: {
+			if let selectedIem {
+				SellerDetailView(
+					seller: selectedIem)
+				.presentationDetents([.fraction(0.25), .large])
+			}
+		})
 		.mapControls {
 			MapUserLocationButton()
 			MapCompass()
 			MapScaleView()
+		}
+		.onChange(of: selectedIem) {
+			if selectedIem != nil {
+				showSheet.toggle()
+			}
 		}
 		.onAppear {
 			locationManager.requestLocation()
