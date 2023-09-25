@@ -25,9 +25,11 @@ struct SellersView: View {
 		coordinate: .init(latitude: 0, longitude: 0)
 	)
 
+	@State private var mapCameraPosition: MapCameraPosition = .camera(.init(centerCoordinate: .init(latitude: 48.303929, longitude: 48.202930), distance: 1000))
+
 	var body: some View {
 		VStack {
-			Map {
+			Map(position: $mapCameraPosition) {
 				ForEach(sellersVm.sellers) { seller in
 					Marker(
 						seller.name,
@@ -56,7 +58,17 @@ struct SellersView: View {
 			.onAppear {
 				locationManager.requestLocation()
 			}
+
 			.onChange(of: selectedSeller) { oldValue, newValue in
+				withAnimation {
+					mapCameraPosition = .camera(
+						.init(
+							centerCoordinate: .init(
+								latitude: newValue.coordinate.latitude,
+								longitude: newValue.coordinate.longitude),
+							distance: 1000)
+					)
+				}
 				print("---- DEBUG: Seller old \(String(describing: oldValue)) ----")
 				print("---- DEBUG: Seller new \(String(describing: newValue)) ----")
 			}
