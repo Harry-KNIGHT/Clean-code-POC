@@ -28,7 +28,7 @@ final class SellersViewModel: ObservableObject {
 
 	/// Asynchronously fetches sellers' data from the repository and updates the `sellers` property accordingly.
 	@MainActor
-	private func getSellers() async {
+	func getSellers() async {
 		do {
 			let sellers =  try await repository.getSellers()
 			self.sellers = sellers.map { Seller(data: $0) }

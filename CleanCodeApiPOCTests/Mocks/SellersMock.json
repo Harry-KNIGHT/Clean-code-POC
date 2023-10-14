@@ -1,0 +1,83 @@
+[
+	{
+		"name":"Vendeur 1",
+		"description":"Description du vendeur 1",
+		"location":{
+			"latitude":"12.3456",
+			"longitude":"78.91011"
+		}
+	},
+	{
+		"name":"Vendeur 2",
+		"description":"Description du vendeur 2",
+		"location":{
+			"latitude":"23.4567",
+			"longitude":"89.10112"
+		}
+	},
+	{
+		"name":"Vendeur 3",
+		"description":"Description du vendeur 3",
+		"location":{
+			"latitude":"34.5678",
+			"longitude":"90.11123"
+		}
+	},
+	{
+		"name":"Vendeur 4",
+		"description":"Description du vendeur 4",
+		"location":{
+			"latitude":"45.6789",
+			"longitude":"101.11234"
+		}
+	},
+	{
+		"name":"Vendeur 5",
+		"description":"Description du vendeur 5",
+		"location":{
+			"latitude":"56.7890",
+			"longitude":"112.12345"
+		}
+	},
+	{
+		"name":"Vendeur 6",
+		"description":"Description du vendeur 6",
+		"location":{
+			"latitude":"67.8901",
+			"longitude":"123.23456"
+		}
+	},
+	{
+		"name":"Vendeur 7",
+		"description":"Description du vendeur 7",
+		"location":{
+			"latitude":"78.9012",
+			"longitude":"134.34567"
+		}
+	},
+	{
+		"name":"Vendeur 8",
+		"description":"Description du vendeur 8",
+		"location":{
+			"latitude":"89.0123",
+			"longitude":"145.45678"
+		}
+	},
+	{
+		"name":"Vendeur 9",
+		"description":"Description du vendeur 9",
+		"location":{
+			"latitude":"90.1234",
+			"longitude":"156.56789"
+		}
+	},
+	{
+		"name":"Vendeur 10",
+		"description":"Description du vendeur 10",
+		"location":{
+			"latitude":"101.2345",
+			"longitude":"167.67890"
+		}
+	}
+]
+

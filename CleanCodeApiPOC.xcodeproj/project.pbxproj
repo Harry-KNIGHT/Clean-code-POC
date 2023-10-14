@@ -10,6 +10,12 @@
 		3C3370832A75CB1000620F62 /* Domain in Frameworks */ = {isa = PBXBuildFile; productRef = 3C3370822A75CB1000620F62 /* Domain */; };
 		3C4FABD82AAAF3310014610E /* Seller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C4FABD72AAAF3310014610E /* Seller.swift */; };
 		3C4FABDB2AAAF4480014610E /* SellerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C4FABDA2AAAF4480014610E /* SellerExtension.swift */; };
+		3C926A892ADA770600A17DC0 /* CleanCodeApiPOCTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C926A882ADA770600A17DC0 /* CleanCodeApiPOCTests.swift */; };
+		3C926A902ADA771E00A17DC0 /* SellersViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C926A8F2ADA771E00A17DC0 /* SellersViewModelTests.swift */; };
+		3C926A922ADA77CB00A17DC0 /* SellerRepositoryMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C926A912ADA77CB00A17DC0 /* SellerRepositoryMock.swift */; };
+		3C926A942ADA780C00A17DC0 /* SellersServiceDefaultMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C926A932ADA780C00A17DC0 /* SellersServiceDefaultMock.swift */; };
+		3C926A992ADA788B00A17DC0 /* SellersInvalidFormatMock.json in Resources */ = {isa = PBXBuildFile; fileRef = 3C926A982ADA788B00A17DC0 /* SellersInvalidFormatMock.json */; };
+		3C926A9B2ADA78AE00A17DC0 /* SellersMock.json in Resources */ = {isa = PBXBuildFile; fileRef = 3C926A9A2ADA78AE00A17DC0 /* SellersMock.json */; };
 		3C9394B32A759846004EA202 /* Api in Frameworks */ = {isa = PBXBuildFile; productRef = 3C9394B22A759846004EA202 /* Api */; };
 		3CEA68F42A61AC3E006CF991 /* CleanCodeApiPOCApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CEA68F32A61AC3E006CF991 /* CleanCodeApiPOCApp.swift */; };
 		3CEA68F82A61AC3F006CF991 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3CEA68F72A61AC3F006CF991 /* Assets.xcassets */; };
@@ -18,9 +24,26 @@
 		3CEA69162A61AEBD006CF991 /* SellersViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CEA69152A61AEBD006CF991 /* SellersViewModel.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		3C926A8A2ADA770600A17DC0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3CEA68E82A61AC3E006CF991 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 3CEA68EF2A61AC3E006CF991;
+			remoteInfo = CleanCodeApiPOC;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
 		3C4FABD72AAAF3310014610E /* Seller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Seller.swift; sourceTree = "<group>"; };
 		3C4FABDA2AAAF4480014610E /* SellerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SellerExtension.swift; sourceTree = "<group>"; };
+		3C926A862ADA770600A17DC0 /* CleanCodeApiPOCTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CleanCodeApiPOCTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		3C926A882ADA770600A17DC0 /* CleanCodeApiPOCTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CleanCodeApiPOCTests.swift; sourceTree = "<group>"; };
+		3C926A8F2ADA771E00A17DC0 /* SellersViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SellersViewModelTests.swift; sourceTree = "<group>"; };
+		3C926A912ADA77CB00A17DC0 /* SellerRepositoryMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SellerRepositoryMock.swift; sourceTree = "<group>"; };
+		3C926A932ADA780C00A17DC0 /* SellersServiceDefaultMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SellersServiceDefaultMock.swift; sourceTree = "<group>"; };
+		3C926A982ADA788B00A17DC0 /* SellersInvalidFormatMock.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = SellersInvalidFormatMock.json; sourceTree = "<group>"; };
+		3C926A9A2ADA78AE00A17DC0 /* SellersMock.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = SellersMock.json; sourceTree = "<group>"; };
 		3C9394B02A7597ED004EA202 /* Api */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = Api; sourceTree = "<group>"; };
 		3C9394BC2A75C78A004EA202 /* Domain */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = Domain; sourceTree = "<group>"; };
 		3CEA68F02A61AC3E006CF991 /* CleanCodeApiPOC.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CleanCodeApiPOC.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -32,6 +55,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		3C926A832ADA770600A17DC0 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		3CEA68ED2A61AC3E006CF991 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -67,12 +97,34 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
+		3C926A872ADA770600A17DC0 /* CleanCodeApiPOCTests */ = {
+			isa = PBXGroup;
+			children = (
+				3C926A882ADA770600A17DC0 /* CleanCodeApiPOCTests.swift */,
+				3C926A8F2ADA771E00A17DC0 /* SellersViewModelTests.swift */,
+				3C926A952ADA782300A17DC0 /* Mocks */,
+			);
+			path = CleanCodeApiPOCTests;
+			sourceTree = "<group>";
+		};
+		3C926A952ADA782300A17DC0 /* Mocks */ = {
+			isa = PBXGroup;
+			children = (
+				3C926A912ADA77CB00A17DC0 /* SellerRepositoryMock.swift */,
+				3C926A932ADA780C00A17DC0 /* SellersServiceDefaultMock.swift */,
+				3C926A982ADA788B00A17DC0 /* SellersInvalidFormatMock.json */,
+				3C926A9A2ADA78AE00A17DC0 /* SellersMock.json */,
+			);
+			path = Mocks;
+			sourceTree = "<group>";
+		};
 		3CEA68E72A61AC3E006CF991 = {
 			isa = PBXGroup;
 			children = (
 				3C9394B02A7597ED004EA202 /* Api */,
 				3C9394BC2A75C78A004EA202 /* Domain */,
 				3CEA68F22A61AC3E006CF991 /* CleanCodeApiPOC */,
+				3C926A872ADA770600A17DC0 /* CleanCodeApiPOCTests */,
 				3CEA68F12A61AC3E006CF991 /* Products */,
 				3C2B9E8D2A64727D00671AB4 /* Frameworks */,
 			);
@@ -82,6 +134,7 @@
 			isa = PBXGroup;
 			children = (
 				3CEA68F02A61AC3E006CF991 /* CleanCodeApiPOC.app */,
+				3C926A862ADA770600A17DC0 /* CleanCodeApiPOCTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -135,6 +188,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		3C926A852ADA770600A17DC0 /* CleanCodeApiPOCTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3C926A8E2ADA770600A17DC0 /* Build configuration list for PBXNativeTarget "CleanCodeApiPOCTests" */;
+			buildPhases = (
+				3C926A822ADA770600A17DC0 /* Sources */,
+				3C926A832ADA770600A17DC0 /* Frameworks */,
+				3C926A842ADA770600A17DC0 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				3C926A8B2ADA770600A17DC0 /* PBXTargetDependency */,
+			);
+			name = CleanCodeApiPOCTests;
+			productName = CleanCodeApiPOCTests;
+			productReference = 3C926A862ADA770600A17DC0 /* CleanCodeApiPOCTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		3CEA68EF2A61AC3E006CF991 /* CleanCodeApiPOC */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 3CEA68FE2A61AC3F006CF991 /* Build configuration list for PBXNativeTarget "CleanCodeApiPOC" */;
@@ -164,9 +235,13 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
-				LastSwiftUpdateCheck = 1430;
+				LastSwiftUpdateCheck = 1500;
 				LastUpgradeCheck = 1430;
 				TargetAttributes = {
+					3C926A852ADA770600A17DC0 = {
+						CreatedOnToolsVersion = 15.0;
+						TestTargetID = 3CEA68EF2A61AC3E006CF991;
+					};
 					3CEA68EF2A61AC3E006CF991 = {
 						CreatedOnToolsVersion = 14.3.1;
 					};
@@ -186,11 +261,21 @@
 			projectRoot = "";
 			targets = (
 				3CEA68EF2A61AC3E006CF991 /* CleanCodeApiPOC */,
+				3C926A852ADA770600A17DC0 /* CleanCodeApiPOCTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		3C926A842ADA770600A17DC0 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3C926A9B2ADA78AE00A17DC0 /* SellersMock.json in Resources */,
+				3C926A992ADA788B00A17DC0 /* SellersInvalidFormatMock.json in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		3CEA68EE2A61AC3E006CF991 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -225,6 +310,17 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		3C926A822ADA770600A17DC0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3C926A942ADA780C00A17DC0 /* SellersServiceDefaultMock.swift in Sources */,
+				3C926A922ADA77CB00A17DC0 /* SellerRepositoryMock.swift in Sources */,
+				3C926A892ADA770600A17DC0 /* CleanCodeApiPOCTests.swift in Sources */,
+				3C926A902ADA771E00A17DC0 /* SellersViewModelTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		3CEA68EC2A61AC3E006CF991 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -239,7 +335,62 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		3C926A8B2ADA770600A17DC0 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 3CEA68EF2A61AC3E006CF991 /* CleanCodeApiPOC */;
+			targetProxy = 3C926A8A2ADA770600A17DC0 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin XCBuildConfiguration section */
+		3C926A8C2ADA770600A17DC0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 99M75C322U;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.elliot.knight.CleanCodeApiPOCTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CleanCodeApiPOC.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/CleanCodeApiPOC";
+			};
+			name = Debug;
+		};
+		3C926A8D2ADA770600A17DC0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 99M75C322U;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.elliot.knight.CleanCodeApiPOCTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CleanCodeApiPOC.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/CleanCodeApiPOC";
+			};
+			name = Release;
+		};
 		3CEA68FC2A61AC3F006CF991 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -419,6 +570,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		3C926A8E2ADA770600A17DC0 /* Build configuration list for PBXNativeTarget "CleanCodeApiPOCTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3C926A8C2ADA770600A17DC0 /* Debug */,
+				3C926A8D2ADA770600A17DC0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		3CEA68EB2A61AC3E006CF991 /* Build configuration list for PBXProject "CleanCodeApiPOC" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
