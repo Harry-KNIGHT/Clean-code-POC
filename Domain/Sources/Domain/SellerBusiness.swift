@@ -1,5 +1,5 @@
 //
-//  Seller.swift
+//  SellerBusiness.swift
 //  
 //
 //  Created by Elliot Knight on 30/07/2023.
@@ -7,13 +7,13 @@
 
 import Foundation
 
-/// The `Seller` struct represents a seller entity with essential information such
+/// The `SellerBusiness` struct represents a seller entity with essential information such
 /// as name, description, and geographic coordinates for the business layer.
 ///
 /// This struct conforms to the `Identifiable` and `Equatable` protocols, allowing
 /// it to be uniquely identified and compared for equality.
-public struct Seller: Identifiable, Equatable {
-	public var id: String { name }
+public struct SellerBusiness: Identifiable, Equatable {
+	public var id: Int { name.hash }
 	public let name: String
 	public let description: String
 	public let coordinate: Coordinate

@@ -14,7 +14,7 @@ import Domain
 /// The view model fetches sellers' data from a provided `SellerRepository` asynchronously and makes it available
 /// through the `sellers` property, which is marked as `@Published` to enable SwiftUI's data binding.
 final class SellersViewModel: ObservableObject {
-	@Published public var sellers: [PresentationSeller] = []
+	@Published public var sellers: [Seller] = []
 	private let repository: SellerRepository
 
 	init(repository: SellerRepository) {
@@ -31,7 +31,7 @@ final class SellersViewModel: ObservableObject {
 	private func getSellers() async {
 		do {
 			let sellers =  try await repository.getSellers()
-			self.sellers = sellers.map { PresentationSeller(data: $0) }
+			self.sellers = sellers.map { Seller(data: $0) }
 		} catch {
 			self.sellers = []
 		}

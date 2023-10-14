@@ -32,7 +32,7 @@ final class SellerRepositoryDefaultTest: XCTestCase {
 			let sellers = try await repositorySut.getSellers()
 
 			// THEN
-			XCTAssertEqual(sellers[0], Seller(
+			XCTAssertEqual(sellers[0], SellerBusiness(
 				name: "Vendeur 1",
 				description: "Description du vendeur 1",
 				coordinate: Coordinate(latitude: 12.3456, longitude: 78.91011)
@@ -51,10 +51,10 @@ final class SellerRepositoryDefaultTest: XCTestCase {
 
 			// WHEN
 			let serviceSellers = try await serviceSut.getSellers()
-			let convertedSellers = serviceSellers.map { Seller(data: $0) }
+			let convertedSellers = serviceSellers.map { SellerBusiness(data: $0) }
 
 			// THEN
-			XCTAssertEqual(convertedSellers[1], Seller(
+			XCTAssertEqual(convertedSellers[1], SellerBusiness(
 				name: "Vendeur 2",
 				description: "Description du vendeur 2",
 				coordinate: Coordinate(

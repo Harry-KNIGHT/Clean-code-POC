@@ -8,8 +8,8 @@
 import Foundation
 import CoreLocation
 
-struct PresentationSeller: Identifiable {
-	let id: String
+struct Seller: Identifiable {
+	let id: Int
 	let name: String
 	let description: String
 	let coordinate: CLLocationCoordinate2D

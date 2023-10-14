@@ -21,10 +21,10 @@ final class SellerRepositoryDefaultMock: SellerRepository {
 		self.service = service
 	}
 
-	func getSellers() async throws -> [Seller] {
+	func getSellers() async throws -> [SellerBusiness] {
 		do {
 			let sellers = try await service.getSellers()
-			let convertedSeller = sellers.map { Seller(data: $0) }
+			let convertedSeller = sellers.map { SellerBusiness(data: $0) }
 			return convertedSeller
 		} catch {
 			throw SellerRepositoryError.cantGetSellers

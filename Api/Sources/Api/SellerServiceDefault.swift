@@ -7,7 +7,7 @@
 
 import Foundation
 
-/// The `SellerServiceDefault` struct provides method to interact with a remote API and fetch seller data.
+/// The `SellerServiceDefault` struct provides method to interact with a remote API and fetch `SellerData`.
 public struct SellerServiceDefault: SellerService {
 
 	public init() {}
@@ -32,8 +32,4 @@ public struct SellerServiceDefault: SellerService {
 			throw ServiceError.invalidDecoding
 		}
 	}
-}
-
-public protocol SellerService {
-	func getSellers() async throws -> [SellerData]
 }
