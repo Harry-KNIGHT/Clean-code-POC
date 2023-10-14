@@ -8,10 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		3C3370832A75CB1000620F62 /* Domain in Frameworks */ = {isa = PBXBuildFile; productRef = 3C3370822A75CB1000620F62 /* Domain */; };
-		3C4FABD82AAAF3310014610E /* PresentationSeller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C4FABD72AAAF3310014610E /* PresentationSeller.swift */; };
-		3C4FABDB2AAAF4480014610E /* PresentationSellerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C4FABDA2AAAF4480014610E /* PresentationSellerExtension.swift */; };
+		3C4FABD82AAAF3310014610E /* Seller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C4FABD72AAAF3310014610E /* Seller.swift */; };
+		3C4FABDB2AAAF4480014610E /* SellerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C4FABDA2AAAF4480014610E /* SellerExtension.swift */; };
 		3C9394B32A759846004EA202 /* Api in Frameworks */ = {isa = PBXBuildFile; productRef = 3C9394B22A759846004EA202 /* Api */; };
-		3CA57E412AA998AE00FAF488 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CA57E402AA998AE00FAF488 /* LocationManager.swift */; };
 		3CEA68F42A61AC3E006CF991 /* CleanCodeApiPOCApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CEA68F32A61AC3E006CF991 /* CleanCodeApiPOCApp.swift */; };
 		3CEA68F82A61AC3F006CF991 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3CEA68F72A61AC3F006CF991 /* Assets.xcassets */; };
 		3CEA68FB2A61AC3F006CF991 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3CEA68FA2A61AC3F006CF991 /* Preview Assets.xcassets */; };
@@ -20,11 +19,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		3C4FABD72AAAF3310014610E /* PresentationSeller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresentationSeller.swift; sourceTree = "<group>"; };
-		3C4FABDA2AAAF4480014610E /* PresentationSellerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresentationSellerExtension.swift; sourceTree = "<group>"; };
+		3C4FABD72AAAF3310014610E /* Seller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Seller.swift; sourceTree = "<group>"; };
+		3C4FABDA2AAAF4480014610E /* SellerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SellerExtension.swift; sourceTree = "<group>"; };
 		3C9394B02A7597ED004EA202 /* Api */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = Api; sourceTree = "<group>"; };
 		3C9394BC2A75C78A004EA202 /* Domain */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = Domain; sourceTree = "<group>"; };
-		3CA57E402AA998AE00FAF488 /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 		3CEA68F02A61AC3E006CF991 /* CleanCodeApiPOC.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CleanCodeApiPOC.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3CEA68F32A61AC3E006CF991 /* CleanCodeApiPOCApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CleanCodeApiPOCApp.swift; sourceTree = "<group>"; };
 		3CEA68F72A61AC3F006CF991 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -56,7 +54,7 @@
 		3C4FABD92AAAF3900014610E /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				3C4FABD72AAAF3310014610E /* PresentationSeller.swift */,
+				3C4FABD72AAAF3310014610E /* Seller.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -64,7 +62,7 @@
 		3C4FABDC2AAAF5020014610E /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				3C4FABDA2AAAF4480014610E /* PresentationSellerExtension.swift */,
+				3C4FABDA2AAAF4480014610E /* SellerExtension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -130,7 +128,6 @@
 			children = (
 				3CEA69132A61AE92006CF991 /* SellersView.swift */,
 				3CEA69152A61AEBD006CF991 /* SellersViewModel.swift */,
-				3CA57E402AA998AE00FAF488 /* LocationManager.swift */,
 			);
 			path = Sellers;
 			sourceTree = "<group>";
@@ -232,12 +229,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3CA57E412AA998AE00FAF488 /* LocationManager.swift in Sources */,
 				3CEA69162A61AEBD006CF991 /* SellersViewModel.swift in Sources */,
 				3CEA69142A61AE92006CF991 /* SellersView.swift in Sources */,
 				3CEA68F42A61AC3E006CF991 /* CleanCodeApiPOCApp.swift in Sources */,
-				3C4FABDB2AAAF4480014610E /* PresentationSellerExtension.swift in Sources */,
-				3C4FABD82AAAF3310014610E /* PresentationSeller.swift in Sources */,
+				3C4FABDB2AAAF4480014610E /* SellerExtension.swift in Sources */,
+				3C4FABD82AAAF3310014610E /* Seller.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

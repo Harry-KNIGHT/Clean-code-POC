@@ -19,7 +19,7 @@ public final class SellerRepositoryDefault: SellerRepository {
 		self.service = service
 	}
 
-	public func getSellers() async throws -> [Seller] {
+	public func getSellers() async throws -> [SellerBusiness] {
 		do {
 			let sellersData = try await service.getSellers()
 			// Map the fetched `SellerData` to an array of `Seller`

@@ -8,5 +8,5 @@
 import Foundation
 
 public protocol SellerRepository {
-	func getSellers() async throws -> [Seller]
+	func getSellers() async throws -> [SellerBusiness]
 }

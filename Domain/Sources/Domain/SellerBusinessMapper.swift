@@ -1,5 +1,5 @@
 //
-//  SellerMapper.swift
+//  SellerBusinessMapper.swift
 //
 //
 //  Created by Elliot Knight on 30/07/2023.
@@ -8,7 +8,7 @@
 import Foundation
 import Api
 
-extension Seller {
+extension SellerBusiness {
 	/// Initializes a new `Seller` instance using data from a `SellerData` object.
 	///
 	/// - Parameter data: The `SellerData` object containing seller information.
