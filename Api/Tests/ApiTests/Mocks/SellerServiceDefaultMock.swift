@@ -15,6 +15,7 @@ import Api
 /// a `ServiceMocks` enum case when initializing the instance. It reads data from JSON
 /// files associated with the chosen mock scenario for testing and development purposes.
 final class SellerServiceDefaultMock: SellerService {
+	private let baseApiMock = BaseApiMock()
 	var serviceMockChoosen: ServiceMocks?
 
 	init(serviceMockChoosen: ServiceMocks? = .goodFormatMock) {
@@ -35,13 +36,11 @@ final class SellerServiceDefaultMock: SellerService {
 			throw ServiceError.invalidUrl
 		}
 
-		let data = try Data(contentsOf: fileUrl)
-
 		do {
-			let sellers = try JSONDecoder().decode([SellerData].self, from: data)
+			let sellers = try await baseApiMock.sendRequest(url: fileUrl, responseModel: [SellerData].self)
 			return sellers
 		} catch {
-			throw ServiceError.invalidDecoding
+			throw ServiceError.unknown
 		}
 	}
 }

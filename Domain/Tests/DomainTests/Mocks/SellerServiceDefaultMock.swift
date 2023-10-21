@@ -36,6 +36,9 @@ final class SellerServiceDefaultMock: SellerService {
 	///   chosen mock scenario. It can simulate errors if the JSON file format is
 	///   incorrect or if the file is missing.
 	func getSellers() async throws -> [SellerData] {
+
+		let baseApi = BaseApiMock()
+
 		guard let fileUrl = Bundle.module.url(
 			forResource: serviceMockChoosen?.rawValue,
 			withExtension: "json"
@@ -43,10 +46,8 @@ final class SellerServiceDefaultMock: SellerService {
 			throw ServiceError.invalidUrl
 		}
 
-		let data = try Data(contentsOf: fileUrl)
-
 		do {
-			let sellers = try JSONDecoder().decode([SellerData].self, from: data)
+			let sellers = try await baseApi.sendRequest(url: fileUrl, responseModel: [SellerData].self)
 			return sellers
 		} catch {
 			throw ServiceError.invalidDecoding
