@@ -39,6 +39,7 @@ final class SellerServiceTests: XCTestCase {
 					latitude: "12.3456",
 					longitude: "78.91011")
 			))
+			XCTAssertEqual(sut.fetchCount, 1)
 		} catch {
 			fatalError("It would never catch there")
 		}
@@ -55,6 +56,7 @@ final class SellerServiceTests: XCTestCase {
 			// THEN
 			XCTAssertEqual(error as? ServiceError, .invalidDecoding)
 			XCTAssertEqual(sut.serviceMockChoosen, .badFormatMock)
+			XCTAssertEqual(sut.fetchCount, 0)
 		}
 	}
 
@@ -69,6 +71,7 @@ final class SellerServiceTests: XCTestCase {
 			// THEN
 			XCTAssertEqual(error as? ServiceError, .invalidUrl)
 			XCTAssertEqual(sut.serviceMockChoosen, .wrongUrlMock)
+			XCTAssertEqual(sut.fetchCount, 0)
 		}
 	}
 }
