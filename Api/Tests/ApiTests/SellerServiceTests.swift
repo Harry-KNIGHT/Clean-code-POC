@@ -45,7 +45,7 @@ final class SellerServiceTests: XCTestCase {
 		}
 	}
 
-	func test_given_getSellers_when_receivingBadFormattedData_then_throwError() async throws {
+	func test_given_getSellers_when_receivingBadFormattedData_then_throwError() async {
 		// GIVEN
 		sut.serviceMockChoosen = .badFormatMock
 
@@ -60,7 +60,7 @@ final class SellerServiceTests: XCTestCase {
 		}
 	}
 
-	func test_given_wrongUrlMock_when_gettingSellers_then_throwError() async throws {
+	func test_given_wrongUrlMock_when_gettingSellers_then_throwError() async {
 		// GIVEN
 		sut.serviceMockChoosen = .wrongUrlMock
 
@@ -71,6 +71,32 @@ final class SellerServiceTests: XCTestCase {
 			// THEN
 			XCTAssertEqual(error as? ServiceError, .invalidUrl)
 			XCTAssertEqual(sut.serviceMockChoosen, .wrongUrlMock)
+			XCTAssertEqual(sut.fetchCount, 0)
+		}
+	}
+
+	func test_given_badFormatMock_when_gettingSeller_then_throwError() async {
+		// GIVEN
+		sut.serviceMockChoosen = .badFormatMock
+		do {
+			// WHEN
+			_ = try await sut.getSellers()
+		} catch {
+			// THEN
+			XCTAssertEqual(error as? ServiceError, .invalidDecoding)
+			XCTAssertEqual(sut.fetchCount, 0)
+		}
+	}
+
+	func test_given_invalidUrl_when_gettingSeller_then_throwError() async {
+		// GIVEN
+		sut.serviceMockChoosen = .wrongUrlMock
+		do {
+			// WHEN
+			_ = try await sut.getSellers()
+		} catch {
+			// THEN
+			XCTAssertEqual(error as? ServiceError, .invalidUrl)
 			XCTAssertEqual(sut.fetchCount, 0)
 		}
 	}
