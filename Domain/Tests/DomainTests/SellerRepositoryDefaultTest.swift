@@ -39,6 +39,7 @@ final class SellerRepositoryDefaultTest: XCTestCase {
 			))
 			XCTAssertEqual(sellers.count, 10)
 			XCTAssertFalse(sellers.isEmpty)
+			XCTAssertEqual(repositorySut.counter, 1)
 		} catch {
 			fatalError("Something whent wrong.")
 		}
@@ -61,6 +62,7 @@ final class SellerRepositoryDefaultTest: XCTestCase {
 					latitude: 23.4567,
 					longitude: 89.10112)
 			))
+			XCTAssertEqual(serviceSut.counter, 1)
 		}
 	}
 }

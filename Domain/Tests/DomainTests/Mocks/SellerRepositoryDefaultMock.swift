@@ -16,15 +16,18 @@ import Domain
 /// from a local data source for testing and development purposes.
 final class SellerRepositoryDefaultMock: SellerRepository {
 	private let service: SellerService
+	public var counter: Int
 
-	public init(service: SellerService) {
+	public init(service: SellerService, counter: Int = 0) {
 		self.service = service
+		self.counter = counter
 	}
 
 	func getSellers() async throws -> [SellerBusiness] {
 		do {
 			let sellers = try await service.getSellers()
 			let convertedSeller = sellers.map { SellerBusiness(data: $0) }
+			counter += 1
 			return convertedSeller
 		} catch {
 			throw SellerRepositoryError.cantGetSellers
