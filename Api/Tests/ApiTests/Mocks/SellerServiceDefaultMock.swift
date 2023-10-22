@@ -16,6 +16,7 @@ import Api
 /// files associated with the chosen mock scenario for testing and development purposes.
 final class SellerServiceDefaultMock: SellerService {
 	var serviceMockChoosen: ServiceMocks?
+	var fetchCount: Int = 0
 
 	init(serviceMockChoosen: ServiceMocks? = .goodFormatMock) {
 		self.serviceMockChoosen = serviceMockChoosen
@@ -39,6 +40,7 @@ final class SellerServiceDefaultMock: SellerService {
 
 		do {
 			let sellers = try JSONDecoder().decode([SellerData].self, from: data)
+			fetchCount += 1
 			return sellers
 		} catch {
 			throw ServiceError.invalidDecoding

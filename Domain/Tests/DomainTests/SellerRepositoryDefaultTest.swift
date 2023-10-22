@@ -8,6 +8,7 @@
 import XCTest
 import Domain
 import CoreLocation
+import Api
 
 final class SellerRepositoryDefaultTest: XCTestCase {
 	var repositorySut: SellerRepositoryDefaultMock!
@@ -39,6 +40,7 @@ final class SellerRepositoryDefaultTest: XCTestCase {
 			))
 			XCTAssertEqual(sellers.count, 10)
 			XCTAssertFalse(sellers.isEmpty)
+			XCTAssertEqual(repositorySut.counter, 1)
 		} catch {
 			fatalError("Something whent wrong.")
 		}
@@ -61,6 +63,65 @@ final class SellerRepositoryDefaultTest: XCTestCase {
 					latitude: 23.4567,
 					longitude: 89.10112)
 			))
+			XCTAssertEqual(serviceSut.counter, 1)
+		}
+	}
+
+	func test_given_badServiceData_when_fetching_then_throwError() async {
+		// GIVEN
+		serviceSut.serviceMockChoosen = .badFormatMock
+
+		do {
+			// WHEN
+			let _ = try await serviceSut.getSellers()
+		} catch {
+			// THEN
+			XCTAssertEqual(serviceSut.counter, 0)
+			XCTAssertEqual(error as? ServiceError, .invalidDecoding)
+		}
+	}
+
+	func test_given_invalidServiceUrl_when_fetching_then_throwError() async {
+		// GIVEN
+		serviceSut.serviceMockChoosen = .wrongUrlMock
+
+		do {
+			// WHEN
+			let _ = try await serviceSut.getSellers()
+		} catch {
+			// THEN
+			XCTAssertEqual(serviceSut.counter, 0)
+			XCTAssertEqual(error as? ServiceError, .invalidUrl)
+		}
+	}
+
+	func test_given_invalidServiceUrl_when_gettingSellers_then_throwError() async {
+		// GIVEN
+		serviceSut.serviceMockChoosen = .wrongUrlMock
+
+		do {
+			// WHEN
+			let _ = try await repositorySut.getSellers()
+		} catch {
+			// THEN
+			XCTAssertEqual(serviceSut.counter, 0)
+			XCTAssertEqual(error as? SellerRepositoryError, .cantGetSellers)
+			XCTAssertEqual(error as? ServiceError, .invalidUrl)
+		}
+	}
+
+	func test_given_invalidServiceDataFormat_when_gettingSellers_then_throwError() async {
+		// GIVEN
+		serviceSut.serviceMockChoosen = .badFormatMock
+
+		do {
+			// WHEN
+			let _ = try await repositorySut.getSellers()
+		} catch {
+			// THEN
+			XCTAssertEqual(serviceSut.counter, 0)
+			XCTAssertEqual(error as? SellerRepositoryError, .cantGetSellers)
+			XCTAssertEqual(error as? ServiceError, .invalidDecoding)
 		}
 	}
 }
