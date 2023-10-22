@@ -8,7 +8,10 @@
 import Foundation
 
 final class SearchSellerUseCaseDefault: SearchSellerUseCase {
-	func searchSeller(keyword sellerName: String, sellers: [SellerBusiness]) -> [SellerBusiness] {
+	func searchSeller(
+		keyword sellerName: String,
+		sellers: [SellerBusiness]
+	) -> [SellerBusiness] {
 		let filteredSellers = sellers.filter { $0.name.contains(sellerName) }
 		return filteredSellers
 	}
