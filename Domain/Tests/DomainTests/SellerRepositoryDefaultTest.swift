@@ -73,7 +73,7 @@ final class SellerRepositoryDefaultTest: XCTestCase {
 
 		do {
 			// WHEN
-			let _ = try await serviceSut.getSellers()
+			_ = try await serviceSut.getSellers()
 		} catch {
 			// THEN
 			XCTAssertEqual(serviceSut.counter, 0)
@@ -87,7 +87,7 @@ final class SellerRepositoryDefaultTest: XCTestCase {
 
 		do {
 			// WHEN
-			let _ = try await serviceSut.getSellers()
+			_ = try await serviceSut.getSellers()
 		} catch {
 			// THEN
 			XCTAssertEqual(serviceSut.counter, 0)
@@ -101,7 +101,7 @@ final class SellerRepositoryDefaultTest: XCTestCase {
 
 		do {
 			// WHEN
-			let _ = try await repositorySut.getSellers()
+			_ = try await repositorySut.getSellers()
 		} catch {
 			// THEN
 			XCTAssertEqual(serviceSut.counter, 0)
@@ -116,7 +116,7 @@ final class SellerRepositoryDefaultTest: XCTestCase {
 
 		do {
 			// WHEN
-			let _ = try await repositorySut.getSellers()
+			_ = try await repositorySut.getSellers()
 		} catch {
 			// THEN
 			XCTAssertEqual(serviceSut.counter, 0)

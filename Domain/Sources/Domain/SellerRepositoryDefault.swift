@@ -13,9 +13,9 @@ import Api
 ///
 /// This repository uses a `SellerService` instance to fetch sellers' data from a remote API or data source.
 public final class SellerRepositoryDefault: SellerRepository {
-	private let service: SellerServiceDefault
+	private let service: SellerService
 
-	public init(service: SellerServiceDefault) {
+	public init(service: SellerService) {
 		self.service = service
 	}
 
